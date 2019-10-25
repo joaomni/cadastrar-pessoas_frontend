@@ -1,0 +1,29 @@
+.card{
+  margin-top: 3%;
+  text-align: center;
+}
+div.form input{
+  margin-top: 10px;
+  width: 60%;
+}
+div.form label{
+  margin: 15px;
+}
+
+div.form button{
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-bottom: 30px;
+  width: 50%;
+}
+div.botoes{
+  margin-left: 30%;
+}
+img{
+  width: 200px;
+  height: 200px;
+}
+
+#btnSearch{
+  margin-top: 10%;
+}

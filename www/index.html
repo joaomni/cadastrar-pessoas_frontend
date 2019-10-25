@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/jquery.js"></script>
+  <script src="components/script.js"></script>
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    //Toolbar
+    window.fn = {};
+
+    window.fn.open = function() {
+      var menu = document.getElementById('menu');
+      menu.open();
+    };
+
+    window.fn.load = function(page) {
+      var content = document.getElementById('content');
+      var menu = document.getElementById('menu');
+      content.load(page)
+        .then(menu.close.bind(menu));
+    };
+  </script>
+</head>
+<body>
+  <!-- <ons-navigator id="navigator" page="page1.html"></ons-navigator> -->
+
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home.html')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('pesquisar.html')" tappable>
+            Pesquisar
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+  
+  <!-- HTML da pagina 1 -->
+  <ons-template id="home.html">
+    <!-- Conteudo da pagina -->
+    <ons-page id="first-page">
+      <!-- Barra de farrementas -->
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Home
+        </div>
+      </ons-toolbar>
+      <!-- Conteudo -->
+      <div class="form">
+        <div class="card">
+          <h2 class="card__title">Dados Pessoais</h2>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" id="codigo" placeholder="Codigo" type="text" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" id="nome" placeholder="Nome" type="text" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" id="idade" placeholder="Idade" type="number" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" id="cpf" placeholder="CPF" type="number" readonly>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <label class="radio-button radio-button--material sexo">
+                <input type="radio" class="radio-button__input radio-button--material__input" value="Homem"  id="homem" name="r" disabled>
+                <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                Homem
+              </label>
+              <label class="radio-button radio-button--material sexo">
+                <input type="radio" class="radio-button__input radio-button--material__input" value="Mulher"  id="mulher" name="r" disabled>
+                <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                Mulher
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <label>Foto</label>
+                <input class="text-input text-input--material" id="caminho" type="file" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card__title">Endereço</h2>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" id="rua" placeholder="Rua" type="text" readonly>
+              <input class="text-input text-input--material" id="numero" placeholder="Numero" type="text" readonly>
+              <input class="text-input text-input--material" id="bairro" placeholder="Bairro" type="text" readonly>
+              <input class="text-input text-input--material cidade" id="cidade" placeholder="Cidade" type="text" readonly>
+              <input class="text-input text-input--material uf" id="uf" placeholder="UF" type="text" maxlength="2" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+              <button class="button--large--cta" id="cadastrar" disabled>Cadastrar</button>
+            </div>
+          </div>
+      </div>
+      <ons-fab id="camera" position="bottom right">
+        <ons-icon icon="md-plus"></ons-icon>
+      </ons-fab>
+    </ons-page><!-- Fim Conteudo -->
+  </ons-template><!-- Fim HTML -->
+
+  <!-- HTML da pagina 2 -->
+  <ons-template id="pesquisar.html">
+    <!-- Conteudo da pagina 2 -->
+    <ons-page id="second-page">
+      <!-- Barra de ferramenta -->
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Pesquisar
+        </div>
+      </ons-toolbar>
+      <!-- Conteudo -->
+      <div class="pesq">
+        <p style="text-align: center; margin-top: 10px;">
+          <ons-search-input placeholder="Search" id="pesquisar"></ons-search-input>
+        </p>
+        <div class="result-search" id="result">
+          <!-- <ul class="list">
+            <li class="list-item">
+              <div class="list-item__left">
+                <img class="list-item__thumbnail" id="imagem">
+              </div>
+
+              <div class="list-item__center">
+                <div class="list-item__title" id="nome1"></div>
+                <div class="list-item__subtitle" id="cidade1"></div>
+              </div>
+            </li>
+          </ul> -->
+        </div>
+        <div id="btnSearch">
+          <button id="searchQR" class="button--large--cta" style="width: 95%; margin: 0 auto;">Pesquisar QR Code</button>
+        </div>
+      </div>
+
+    </ons-page><!-- Fim Conteudo -->
+  </ons-template><!-- Fim HTML -->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<div class="form">
+        <div class="card">
+          <h2 class="card__title">Dados Pessoais</h2>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" placeholder="Codigo" id="codigo" type="text" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" placeholder="Nome" id="nome2" type="text" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" placeholder="Idade" id="idade2" type="number" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" placeholder="CPF" id="cpf2" type="number" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <label class="radio-button radio-button--material sexo">
+                <input type="radio" class="radio-button__input radio-button--material__input" value="Homem"  id="homem2" name="r">
+                <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                Homem
+              </label>
+              <label class="radio-button radio-button--material sexo">
+                <input type="radio" class="radio-button__input radio-button--material__input" value="Mulher"  id="mulher2" name="r">
+                <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                Mulher
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <p>Imagem</p>
+              <img id="imagem2">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <label>Alterar</label>
+              <input class="text-input text-input--material" id="caminho1" type="file">
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card__title">Endereço</h2>
+          <div class="row">
+            <div class="col-xs-12">
+              <input class="text-input text-input--material" placeholder="Rua" id="rua2" type="text" required>
+              <input class="text-input text-input--material" placeholder="Numero" id="numero2" type="text" required>
+              <input class="text-input text-input--material" placeholder="Bairro" id="bairro2" type="text" required>
+              <input class="text-input text-input--material" placeholder="Cidade" id="cidade2" type="text" required>
+              <input class="text-input text-input--material" placeholder="UF" id="uf2" type="text" maxlength="2">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 botoes">
+            <ons-button id="salvar" class="button" style="font-size: 25px;background-color: #5ACF4E; margin: 5px;"><i class="far fa-save"></i></ons-button>
+
+            <ons-button id="deletar" class="button" style="font-size: 25px;background-color: #DC4C4C; margin: 5px;"><i class="far fa-trash-alt"></i></ons-button>
+          </div>
+        </div>
+      </div>
